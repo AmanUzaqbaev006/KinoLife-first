@@ -1,0 +1,28 @@
+from django.contrib import admin
+from .models import Post
+from .models import Comment
+from .models import Pro
+
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+
+    list_display = ['id', 'first_name',  'video']
+    ordering = ['-id']
+    search_fields = ['name']
+    list_filter = ['first_name']
+    prepopulated_fields = {
+        'slug' : ('first_name',)
+    }
+
+@admin.register(Pro)
+class ProAdmin(admin.ModelAdmin):
+    
+    list_display = ['id', 'name' ]
+    ordering = ['-id']
+    search_fields = ['name']
+
+
+
+admin.site.register(Comment)
+
