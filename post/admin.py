@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Post
 from .models import Comment
-from .models import Pro
 
 
 @admin.register(Post)
@@ -14,14 +13,6 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {
         'slug' : ('first_name',)
     }
-
-@admin.register(Pro)
-class ProAdmin(admin.ModelAdmin):
-    
-    list_display = ['id', 'name' ]
-    ordering = ['-id']
-    search_fields = ['name']
-
 
 
 admin.site.register(Comment)

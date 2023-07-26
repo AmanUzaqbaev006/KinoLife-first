@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from . models import Post, Comment, Pro
+from . models import Post, Comment
 from . forms import PostForm, CommentForm
 
 from django.contrib.auth.decorators import login_required
